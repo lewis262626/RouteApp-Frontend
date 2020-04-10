@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Col, Form, Button } from 'react-bootstrap';
 import './Form.css';
 
-const PlaneForm = () => {
+const PlaneForm = (props) => {
     const [country, setCountry] = useState("");
 
     const onChange = (e) => {
@@ -10,7 +10,7 @@ const PlaneForm = () => {
     }
 
     const onSubmit = (e) => {
-        alert(country);
+        props.setResult(country);
         e.preventDefault();
     }
 
