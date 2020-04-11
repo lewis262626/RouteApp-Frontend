@@ -14,9 +14,7 @@ function App() {
         </Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse>
-          <Nav pullRight>
             <NavItem><a href="/About">About</a></NavItem>
-          </Nav>
         </Navbar.Collapse>
       </Navbar>
       <Routes />
