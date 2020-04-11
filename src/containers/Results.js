@@ -8,7 +8,7 @@ const Results = (props) => {
     return (
         <Container className="mt-4">
             <Row className="justify-content-md-center">
-                <Col xs={4}>
+                <Col lg={4}>
                     <Card>
                         <Card.Header>Deperature Airport</Card.Header>
                         <Card.Body>
@@ -26,7 +26,7 @@ const Results = (props) => {
                         </Card.Body>
                     </Card>
                 </Col>
-                <Col xs={4}>
+                <Col lg={4}>
                     <Card>
                         <Card.Header>Arrival Airport</Card.Header>
                         <Card.Body>
