@@ -23,8 +23,13 @@ const PlaneForm = (props) => {
     }
 
     const onSubmit = async (e) => {
-        setIsLoading(true);
         e.preventDefault();
+        if (!country || country.length === 0) {
+            e.preventDefault();
+            e.stopPropagation();
+            return ;
+        }
+        setIsLoading(true);
         const result = await apiPost(country, sliderValue);
 
         if (result.status !== 200) {
