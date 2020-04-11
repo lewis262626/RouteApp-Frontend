@@ -2,17 +2,20 @@ import React, { useState } from "react";
 import "./Home.css";
 import PlaneForm from './Form';
 import Results from './Results';
+import { Container } from "react-bootstrap";
 
 export default function Home() {
-  const [results, setResults] = useState("");
+  const [formResult, setFormResult] = useState("");
   return (
-    <div className="Home">
-      <div className="lander">
-        <h1>SimRoutes</h1>
-        <p>A simple route generation app</p>
+    <Container>
+      <div className="Home">
+        <div className="lander">
+          <h1>SimRoutes</h1>
+          <p>A simple route generation app</p>
+        </div>
+        <PlaneForm setFormResult={setFormResult} />
+        {formResult ? <Results formResult={formResult} /> : ""}
       </div>
-      <PlaneForm setResults={setResults} />
-      {results ? <Results results={results} /> : ""}
-    </div>
+    </Container>
   );
 }

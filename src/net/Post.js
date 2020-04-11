@@ -6,6 +6,9 @@ async function apiPost(name) {
         const response = await axios.post(URL, {
             country: name
         });
+
+        return response;
+
     } catch (e) {
         console.log(e);
     }
