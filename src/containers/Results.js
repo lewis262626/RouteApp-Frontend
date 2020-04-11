@@ -32,13 +32,13 @@ const Results = (props) => {
                         <Card.Body>
                             <ul>
                                 <li>
-                                    Name: {data.airport1.name}, {data.airport1.state}
+                                    Name: {data.airport2.name}, {data.airport2.state}
                                 </li>
                                 <li>
-                                    ICAO: {data.airport1.icao}
+                                    ICAO: {data.airport2.icao}
                                 </li>
                                 <li>
-                                    Runway Length: {data.airport1.runway_length} m
+                                    Runway Length: {data.airport2.runway_length} m
                                 </li>
                             </ul>
                         </Card.Body>
