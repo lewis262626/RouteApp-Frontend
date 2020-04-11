@@ -28,7 +28,7 @@ const Results = (props) => {
                 </Col>
                 <Col lg={4}>
                     <Card>
-                        <Card.Header>Arrival Airport, distance {data.distance} KM</Card.Header>
+                        <Card.Header>Arrival Airport, distance <b>{Math.ceil(data.distance / 1.852)}</b> nm</Card.Header>
                         <Card.Body>
                             <ul>
                                 <li>
