@@ -1,1 +1,1 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/9c24c006-a3cb-47f8-9e55-f2005b0a5766/deploy-status)](https://app.netlify.com/sites/loving-heisenberg-1932ab/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9c24c006-a3cb-47f8-9e55-f2005b0a5766/deploy-status)](https://app.netlify.com/sites/sim-routes/deploys)
