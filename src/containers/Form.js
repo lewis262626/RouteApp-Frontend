@@ -51,7 +51,7 @@ const PlaneForm = (props) => {
         return (
             <Tooltip
                 prefixCls="rc-slider-tooltip"
-                overlay={value + " nm"}
+                overlay={value + " NM"}
                 visible={dragging}
                 placement="top"
                 key={index}
