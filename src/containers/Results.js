@@ -28,7 +28,7 @@ const Results = (props) => {
                 </Col>
                 <Col lg={4}>
                     <Card>
-                        <Card.Header>Arrival Airport</Card.Header>
+                        <Card.Header>Arrival Airport, distance {data.distance} KM</Card.Header>
                         <Card.Body>
                             <ul>
                                 <li>
