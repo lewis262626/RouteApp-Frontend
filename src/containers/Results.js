@@ -10,7 +10,7 @@ const Results = (props) => {
             <Row className="justify-content-md-center">
                 <Col lg={4}>
                     <Card>
-                        <Card.Header>Deperature Airport</Card.Header>
+                        <Card.Header>Departure Airport</Card.Header>
                         <Card.Body>
                             <ul>
                                 <li>
