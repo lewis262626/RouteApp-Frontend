@@ -63,11 +63,11 @@ const PlaneForm = (props) => {
 
     return (
         <Form onSubmit={(e) => onSubmit(e)} className="form-container">
-            <Form.Row className="justify-content-md-center">
-                <Col className="offset-md-1" md={3}>
+            <Form.Row className="justify-content-center">
+                <Col className="offset-md-1" xs={3}>
                     <Typeahead id="country-form" onChange={(selected => onChange(selected))} options={countryList} placeholder="Country" />
                 </Col>
-                <Col md="auto">
+                <Col xs="auto">
                     <Button variant="primary" type="submit">
                         <Spinner
                             className="mr-1"
@@ -82,7 +82,7 @@ const PlaneForm = (props) => {
                     </Button>
                 </Col>
             </Form.Row>
-            <Form.Row className="justify-content-md-center mt-3">
+            <Form.Row className="justify-content-center mt-3">
                 <Col xs={3}>
                     <Slider min={200} defaultValue={200} max={1000} handle={handle} />
                 </Col>
