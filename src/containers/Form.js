@@ -68,7 +68,7 @@ const PlaneForm = (props) => {
     return (
         <div className="form">
             <Alert className="alert-a" hidden={!isAPIError} variant="danger">
-                Could not find a route, please decrease the range.
+                Could not find a route, please decrease the range or try a different country.
             </Alert>
             <Form onSubmit={(e) => onSubmit(e)} className="form-container">
                 <Form.Row className="justify-content-center">
