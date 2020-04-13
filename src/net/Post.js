@@ -18,10 +18,8 @@ async function apiPost(name, distance) {
         return response;
 
     } catch (e) {
-        console.log(e);
-        return {
-            'status': 500
-        };
+        console.log(e.response);
+        return e.response;
     }
 }
 
