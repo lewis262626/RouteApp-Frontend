@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Col, Form, Button, Spinner } from 'react-bootstrap';
+import { Col, Form, Button, Spinner, Alert } from 'react-bootstrap';
 import { Typeahead } from 'react-bootstrap-typeahead';
 import Slider, { Range} from 'rc-slider';
 import Tooltip from 'rc-tooltip';
@@ -17,6 +17,7 @@ const PlaneForm = (props) => {
     const [country, setCountry] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [sliderValue, setSliderValue] = useState(200);
+    const [isAPIError, setIsAPIError] = useState(false);
 
     const onChange = (selected) => {
         setCountry(selected);
@@ -35,10 +36,13 @@ const PlaneForm = (props) => {
         if (result.status !== 200) {
             console.log("API error");
             setIsLoading(false);
+            setIsAPIError(true);
             return;
         }
+
         props.setFormResult(result.data);
         setIsLoading(false);
+        setIsAPIError(false);
     }
 
     const createSliderWithTooltip = Slider.createSliderWithTooltip;
@@ -62,32 +66,37 @@ const PlaneForm = (props) => {
     };
 
     return (
-        <Form onSubmit={(e) => onSubmit(e)} className="form-container">
-            <Form.Row className="justify-content-center">
-                <Col className="offset-md-1" xs={3}>
-                    <Typeahead id="country-form" onChange={(selected => onChange(selected))} options={countryList} placeholder="Country" />
-                </Col>
-                <Col xs="auto">
-                    <Button variant="primary" type="submit">
-                        <Spinner
-                            className="mr-1"
-                            hidden={!isLoading}
-                            as="span"
-                            animation="border"
-                            size="sm"
-                            role="status"
-                            aria-hidden="true"
-                        />
-                        {!isLoading ? 'Submit' : ''}
-                    </Button>
-                </Col>
-            </Form.Row>
-            <Form.Row className="justify-content-center mt-3">
-                <Col xs={3}>
-                    <Slider min={200} defaultValue={200} max={1000} handle={handle} />
-                </Col>
-            </Form.Row>
-        </Form>
+        <div className="form">
+            <Alert className="alert-a" hidden={!isAPIError} variant="danger">
+                Could not find a route, please decrease the range or try a different country.
+            </Alert>
+            <Form onSubmit={(e) => onSubmit(e)} className="form-container">
+                <Form.Row className="justify-content-center">
+                    <Col className="offset-md-1" xs={3}>
+                        <Typeahead id="country-form" onChange={(selected => onChange(selected))} options={countryList} placeholder="Country" />
+                    </Col>
+                    <Col xs="auto">
+                        <Button variant="primary" type="submit">
+                            <Spinner
+                                className="mr-1"
+                                hidden={!isLoading}
+                                as="span"
+                                animation="border"
+                                size="sm"
+                                role="status"
+                                aria-hidden="true"
+                            />
+                            {!isLoading ? 'Submit' : ''}
+                        </Button>
+                    </Col>
+                </Form.Row>
+                <Form.Row className="justify-content-center mt-3">
+                    <Col xs={3}>
+                        <Slider min={200} defaultValue={200} max={1000} handle={handle} />
+                    </Col>
+                </Form.Row>
+            </Form>
+        </div>
     )
 }
 
