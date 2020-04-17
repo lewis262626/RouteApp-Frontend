@@ -20,7 +20,7 @@ const Results = (props) => {
                                     ICAO: {data.airport1.icao}
                                 </li>
                                 <li>
-                                    Runway Length: {data.airport1.runway_length} m
+                                    Runway Length: {data.airport1.runway_length} ft
                                 </li>
                             </ul>
                         </Card.Body>
@@ -38,7 +38,7 @@ const Results = (props) => {
                                     ICAO: {data.airport2.icao}
                                 </li>
                                 <li>
-                                    Runway Length: {data.airport2.runway_length} m
+                                    Runway Length: {data.airport2.runway_length} ft
                                 </li>
                             </ul>
                         </Card.Body>
